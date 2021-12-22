@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /root/.conf.d/snap2html/DiogenesList-master/
-python3 /root/.conf.d/snap2html/DiogenesList-master/diogeneslist.py /root/rclone/00en/TEST index
+python3 /root/.conf.d/snap2html/DiogenesList-master/diogeneslist.py /root/rclone/00en/scraper/decepit/movie index
 sed -i "s#\[LINK ROOT\]#https://en.dxz.plus/0:#g"  /root/.conf.d/snap2html/DiogenesList-master/index.html
 sed -i "s#\[LINK PROTOCOL\]##g"  /root/.conf.d/snap2html/DiogenesList-master/index.html
 sed -i "s#\[SOURCE ROOT\]##g"  /root/.conf.d/snap2html/DiogenesList-master/index.html
