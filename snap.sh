@@ -1,0 +1,14 @@
+#!/bin/bash
+cd /root/.conf.d/snap2html/DiogenesList-master/
+python3 /root/.conf.d/snap2html/DiogenesList-master/diogeneslist.py /root/rclone/00en/TEST index
+sed -i "s#\[LINK ROOT\]#https://en.dxz.plus/0:#g"  /root/.conf.d/snap2html/DiogenesList-master/index.html
+sed -i "s#\[LINK PROTOCOL\]##g"  /root/.conf.d/snap2html/DiogenesList-master/index.html
+sed -i "s#\[SOURCE ROOT\]##g"  /root/.conf.d/snap2html/DiogenesList-master/index.html
+sed -i "s#\\\\\\\root\\\\\\\rclone\\\\\\\00en##g"  /root/.conf.d/snap2html/DiogenesList-master/index.html
+sed -i "s#1>index#1>所有内容均来自公开分享_收藏自用_侵权联系https://t.me/dxb22abad(telegram)#g" /root/.conf.d/snap2html/DiogenesList-master/index.html
+sed -i "s#e>index#e>00盘_用法详见dxz.plus#g" /root/.conf.d/snap2html/DiogenesList-master/index.html
+cp /root/.conf.d/snap2html/DiogenesList-master/index.html /root/.conf.d/snapGit/
+cd /root/.conf.d/snapGit
+git add .
+git commit -m '00enDailyUpdate'
+git push  https://github.com/dxb22abad/en.git
